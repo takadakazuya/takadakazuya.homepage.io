@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技術</title>
+    <style>
+        html {
+            line-height: 1.5;
+        }
+        
+        body {
+            margin-left: 2em;
+            margin-top: 2em;
+            margin-bottom: 2em;
+            font-size: 1.1em;
+        }
+        
+        p {
+            text-align: center;
+            max-width: 100px;
+        }
+        
+        p.anime1 {
+            animation: ugoku1 .5s infinite linear;
+        }
+        
+        p.anime2 {
+            max-width: 120px;
+            animation: ugoku2 .5s infinite linear;
+        }
+        
+        div.anime3 {
+            position: absolute;
+            animation: ugoku3 4s ease-in-out infinite;
+        }
+        
+        p.anime4 {
+            max-width: 120px;
+            animation: ugoku4 2s infinite linear;
+        }
+        
+        p.anime5 {
+            max-width: 240px;
+            cursor: pointer;
+            z-index: 999;
+            color: black;
+            transition: color 2s;
+        }
+        
+        p.anime5:hover {
+            color: aqua;
+        }
+        
+        @keyframes ugoku1 {
+            0% {
+                transform: scale(1);
+            }
+            16% {
+                transform: scale(0.95);
+            }
+            74% {
+                transform: scale(0.95);
+            }
+            90% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes ugoku2 {
+            0% {
+                opacity: 0.5;
+            }
+            16% {
+                opacity: 1;
+            }
+            74% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0.5;
+            }
+        }
+        
+        @keyframes ugoku3 {
+            0% {
+                right: 70%;
+            }
+            50% {
+                right: 85%;
+            }
+            100% {
+                right: 70%;
+            }
+        }
+        
+        @keyframes ugoku4 {
+            0% {
+                transform: rotate(0turn);
+            }
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    ホームページは<a href="index.html">こちら</a>
+    <p class="anime1">動く文字1</p>
+    <p class="anime2">点滅する文字</p>
+    <div class="anime3">動く文字2</div><br>
+    <p class="anime4">回転する文字</p>
+    <p class="anime5">文字の色が変わる</p>
+    <p>電卓</p>
+    <form>
+        <input type="number">
+        <select>
+            <option>+</option>
+            <option>-</option>
+            <option>/</option>
+            <option>*</option>
+        </select>
+        <input type="number">=
+        <input type="text" readonly>
+        <br>
+    </form>
+    <input type="submit" value="計算する" onclick="dentaku()">
+    <script>
+        let $a = document.getElementsByTagName("form");
+        console.log($a);
+
+        function dentaku() {
+            let $a = document.getElementsByTagName("form");
+            console.log($a);
+            let an; //答え
+            if ($a[0][1][0].selected) {
+                an = JSON.parse($a[0][0].value) + JSON.parse($a[0][2].value)
+            }
+            if ($a[0][1][1].selected) {
+                an = JSON.parse($a[0][0].value) - JSON.parse($a[0][2].value)
+            }
+            if ($a[0][1][2].selected) {
+                an = JSON.parse($a[0][0].value) / JSON.parse($a[0][2].value)
+            }
+            if ($a[0][1][3].selected) {
+                an = JSON.parse($a[0][0].value) * JSON.parse($a[0][2].value)
+            }
+            $a[0][3].value = an
+            console.log(an);
+        }
+    </script>
+</body>
+
+</html>
