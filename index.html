@@ -12,6 +12,7 @@
             margin-top: 2em;
             margin-bottom: 2em;
             font-size: 1.1em;
+            flex: auto;
         }
         
         div {
@@ -47,7 +48,9 @@
     </div>
 
     <h1 id="1">こんにちは!</h1>
-    私の名前は<span class="namae">高田　和弥</span>と申します。</br> こちらのサイトは自分自身で作成しております。
+    私の名前は<span class="namae">高田　和弥</span>と申します。</br>
+    <span id="nennrei"></span>歳、男性です。
+    <br> こちらのサイトは自分自身で作成しております。
     </br> HTMLやCSSをちょっとでも学びたい場合は[F12]キーを押していただくと何か参考になるかもしれません。
     </br>
     <h1 id="2">活動リンク</h1>
@@ -62,14 +65,40 @@
     <li><a href="https://www.pixiv.net/users/58770420" target="_blank">ピクシブ</a></li>
     <li><a href="https://steamcommunity.com/profiles/76561199209402015/" target="_blank">steam</a></li>
     <h1 id="3">私の趣味など</h1>
-    お待たせしました?<br> 私の趣味のコーナーです。<br> 私は、ポケモンが好きです。
-    <br> 好きなポケモンは「<a href="https://zukan.pokemon.co.jp/detail/151" target="_blank"><span class="pokemon">ミュウ</span></a>」です。<br> 私を「<span class="jisin">ポケモン</span>」に例えると「<a href="https://zukan.pokemon.co.jp/detail/007" target="_blank"><span class="namae">ゼニガメ</span></a>」です。<br>    けもの変身系が好きです。なお、仮面ライダーみたいな変身系はあまり好きではありません。
-    <br> 数学が好きです。しかし、解くことはあまりできません。<br> 美しさに惹かれた感じです。ご了承ください。
-    <br>え!?あまり技術らしさを感じないですって..?<br>わかりました。<a href="gijyutu.html">こちら</a>をご覧ください。
-
-
-
-
+    お待たせしました?
+    <br> 私の趣味のコーナーです。
+    <br> 私は、ポケモンが好きです。
+    <br> 好きなポケモンは「<a href="https://zukan.pokemon.co.jp/detail/151" target="_blank"><span class="pokemon">ミュウ</span></a>」です。
+    <br> 私を「<span class="jisin">ポケモン</span>」に例えると「<a href="https://zukan.pokemon.co.jp/detail/007" target="_blank"><span class="namae">ゼニガメ</span></a>」です。
+    <br> けもの変身系が好きです。なお、仮面ライダーみたいな変身系はあまり好きではありません。
+    <br> 数学が好きです。しかし、解くことはあまりできません。
+    <br> 美しさに惹かれた感じです。ご了承ください。
+    <br>ぷよぷよやテトリスや将棋やオセロも少しできます。
+    <br>麻雀もルールがわからないものの、プレイしたことがあります。
+    <br>ぷよぷよは現在、最高連鎖12連鎖。(フィーバー、ぷよ謎除く)
+    <br>え!?あまり技術らしさを感じないですって..?
+    <br>わかりました。<a href="gijyutu.html">こちら</a>をご覧ください。
+    <script>
+        let $nenrei = document.getElementById("nennrei");
+        let jikan = new Date();
+        let tanjou = new Date(2001, 8, 10);
+        let ima_nen = jikan.getFullYear();
+        let ima_getu = jikan.getMonth() + 1;
+        let ima_hi = jikan.getDay();
+        let tosi;
+        if (ima_getu < tanjou.getMonth()) {
+            tosi = ima_nen - tanjou.getFullYear() - 1;
+        } else if (ima_getu >= tanjou.getMonth() && ima_hi > tanjou.getDay()) {
+            tosi = ima_nen - tanjou.getFullYear() - 1;
+        } else {
+            tosi = ima_nen - tanjou.getFullYear();
+        }
+        if (tosi > 80) {
+            $nenrei.innerHTML = "生きていれば" + tosi;
+        } else {
+            $nenrei.innerHTML = tosi;
+        }
+    </script>
 </body>
 
 </html>
