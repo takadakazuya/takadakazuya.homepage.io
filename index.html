@@ -28,6 +28,7 @@
             position: absolute;
             top: 10em;
             left: 50%;
+            padding-bottom: 3em;
             transform: translateX(-50%);
         }
         
@@ -47,7 +48,11 @@
             color: rgb(231, 84, 84);
         }
         
-        @media screen {}
+        @media (orientation: portrait) {
+            h1 {
+                margin-left: 0em!important;
+            }
+        }
     </style>
 </head>
 
@@ -57,6 +62,7 @@
             <li><a href="#1">自己紹介</a></li>
             <li><a href="#2">活動リンク</a></li>
             <li><a href="#3">私の趣味</a></li>
+            <li><a href="#4">作成した作品</a></li>
         </ul>
     </div>
     <div class="main">
@@ -91,6 +97,9 @@
         <br>ぷよぷよは現在、最高連鎖12連鎖。(フィーバー、ぷよ謎除く)
         <br>え!?あまり技術らしさを感じないですって..?
         <br>わかりました。<a href="gijyutu.html">こちら</a>をご覧ください。
+        <h1 id="4">作った作品</h1>
+        <li><a href="https://takadakazuya.github.io/Avoid-game/">避けげー</a></li>
+
     </div>
     <script>
         let $nenrei = document.getElementById("nennrei");
