@@ -14,7 +14,7 @@
             margin-bottom: 2em;
             flex: auto;
         }
-        
+
         div.hikisuu {
             float: none;
             position: absolute;
@@ -24,7 +24,7 @@
             background-color: gray;
             box-shadow: 20px 20px 20px rgb(69, 69, 69);
         }
-        
+
         .main {
             float: none;
             position: absolute;
@@ -33,33 +33,34 @@
             padding-bottom: 3em;
             transform: translateX(-50%);
         }
-        
+
         h1 {
             font-size: 1.5em;
             margin-left: -1.5em;
         }
-        
+
         span.namae {
             color: rgb(32, 152, 221);
         }
-        
+
         span.pokemon {
             color: rgb(215, 65, 215);
         }
-        
+
         span.jisin {
             color: rgb(231, 84, 84);
         }
-        
+
         a.kyuusi {
             text-decoration-line: line-through;
             text-decoration-style: double;
         }
-        
+
         @media (orientation: portrait) {
             h1 {
-                margin-left: 0em!important;
+                margin-left: 0em !important;
             }
+
             div {
                 display: contents;
             }
@@ -76,9 +77,9 @@
             <li><a href="#4">作成した作品</a></li>
         </ul>
     </div>
-    <div class="main">
+    < class="main">
         <h1 id="1">こんにちは!</h1>
-        私の名前は<span class="namae">つはる</span>と申します。</br>
+        私の名前は<span class="namae">さかみやり</span>と申します。</br>
         <span id="nennrei"></span>歳、男性です。
         <br> こちらのサイトは自分自身で作成しております。
         </br> HTMLやCSSをちょっとでも学びたい場合は[F12]キーを押していただくと何か参考になるかもしれません。
@@ -88,20 +89,21 @@
         <li><a href="https://www.youtube.com/channel/UCSYV7JfqI3NxiEOJdxf0kYw" target="_blank">youtube</a></li>
         <li><a href="https://twitter.com/sakamiyariwike" target="_blank">Twitter</a></li>
         <li><a href="https://skeb.jp/@sakamiyariwike" target="_blank">skeb</a></li>
-        <li>discode:sakamiyari</li>
-        <li><a href="https://odaibako.net/u/sakamiyariwike" target="_blank" class="kyuusi">お題箱</a>(休止しました)</li>
+        <li>discord:sakamiyari</li>
         <li><a href="https://github.com/sakamiyari" target="_blank">旧githubアカウント</a></li>
         <li><a href="https://github.com/takadakazuya" target="_blank">新githubアカウント</a></li>
         <li><a href="https://www.pixiv.net/users/58770420" target="_blank">ピクシブ</a></li>
         <li><a href="https://steamcommunity.com/profiles/76561199209402015/" target="_blank">steam</a></li>
         <li><a href="https://pokemon.sorakaze.info/dashboards/" target="_blank">ポケモンスクエア</a></li>
-        <li><a href="https://zabuu.site/user/detail/1066989195980234753">質問箱</a></li>
+        <li><a rel="me" href="https://kemonodon.club/@sakamiyariwike" target="_blank">Mastodon</a></li>
         <h1 id="3">私の趣味など</h1>
         お待たせしました?
         <br> 私の趣味のコーナーです。
         <br> 私は、ポケモンが好きです。
-        <br> 好きなポケモンは「<a href="https://zukan.pokemon.co.jp/detail/151" target="_blank"><span class="pokemon">ミュウ</span></a>」です。
-        <br> 私を「<span class="jisin">ポケモン</span>」に例えると「<a href="https://zukan.pokemon.co.jp/detail/007" target="_blank"><span class="namae">ゼニガメ</span></a>」です。
+        <br> 好きなポケモンは「<a href="https://zukan.pokemon.co.jp/detail/151" target="_blank"><span
+                class="pokemon">ミュウ</span></a>」です。
+        <br> 私を「<span class="jisin">ポケモン</span>」に例えると「<a href="https://zukan.pokemon.co.jp/detail/007"
+            target="_blank"><span class="namae">ゼニガメ</span></a>」です。
         <br> けもの変身系が好きです。
         <br>なお、仮面ライダーみたいな変身系はあまり好きではありません。
         <br> 数学が好きです。しかし、解くことはあまりできません。
@@ -112,34 +114,34 @@
         <br>え!?あまり技術らしさを感じないですって..?
         <br>わかりました。<a href="gijyutu.html">こちら</a>をご覧ください。
         <h1 id="4">作った作品</h1>
-        <li><a href="https://takadakazuya.github.io/Avoid-game/">避けげー</a> →<a href="https://github.com/takadakazuya/Avoid-game">説明書はこちら</a></li>
-        <li><a href="https://takadakazuya.github.io/tuharuware/">メイドインツハル</a> →<a href="https://github.com/takadakazuya/tuharuware">説明書はこちら</a></li>
-    </div>
-    <script>
-        let $nenrei = document.getElementById("nennrei");
-        let jikan = new Date();
-        let tanjou = new Date(2001, 8, 10);
-        let ima_nen = jikan.getFullYear();
-        let ima_getu = jikan.getMonth() + 1;
-        let ima_hi = jikan.getDate();
-        let tosi;
-        if (ima_getu < tanjou.getMonth()) {
-            tosi = ima_nen - tanjou.getFullYear() - 1;
-        } else if (ima_getu >= tanjou.getMonth() && ima_hi < tanjou.getDate()) {
-            tosi = ima_nen - tanjou.getFullYear() - 1;
-        } else {
-            tosi = ima_nen - tanjou.getFullYear();
-        }
-        if (tosi > 80) {
-            $nenrei.innerHTML = "生きていれば" + tosi;
-        } else {
-            $nenrei.innerHTML = tosi;
-        }
-        if (tanjou.getMonth() == ima_getu && tanjou.getDate() == ima_hi) {
-            $nenrei.innerHTML = tosi + "(今日が誕生日です!!!)"
-        }
-        console.log(jikan)
-    </script>
+        <li><a href="https://takadakazuya.github.io/Avoid-game/">避けげー</a> →<a
+                href="https://github.com/takadakazuya/Avoid-game">説明書はこちら</a></li>
+        </div>
+        <script>
+            let $nenrei = document.getElementById("nennrei");
+            let jikan = new Date();
+            let tanjou = new Date(2001, 8, 10);
+            let ima_nen = jikan.getFullYear();
+            let ima_getu = jikan.getMonth() + 1;
+            let ima_hi = jikan.getDate();
+            let tosi;
+            if (ima_getu < tanjou.getMonth()) {
+                tosi = ima_nen - tanjou.getFullYear() - 1;
+            } else if (ima_getu >= tanjou.getMonth() && ima_hi < tanjou.getDate()) {
+                tosi = ima_nen - tanjou.getFullYear() - 1;
+            } else {
+                tosi = ima_nen - tanjou.getFullYear();
+            }
+            if (tosi > 80) {
+                $nenrei.innerHTML = "生きていれば" + tosi;
+            } else {
+                $nenrei.innerHTML = tosi;
+            }
+            if (tanjou.getMonth() == ima_getu && tanjou.getDate() == ima_hi) {
+                $nenrei.innerHTML = tosi + "(今日が誕生日です!!!)"
+            }
+            console.log(jikan)
+        </script>
 </body>
 
 </html>
