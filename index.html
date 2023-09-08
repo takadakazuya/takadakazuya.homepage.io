@@ -127,7 +127,7 @@
             let tosi;
             if (ima_getu < tanjou.getMonth()) {
                 tosi = ima_nen - tanjou.getFullYear() - 1;
-            } else if (ima_getu >= tanjou.getMonth() && ima_hi < tanjou.getDate()) {
+            } else if (ima_getu <= tanjou.getMonth() && ima_hi < tanjou.getDate()) {
                 tosi = ima_nen - tanjou.getFullYear() - 1;
             } else {
                 tosi = ima_nen - tanjou.getFullYear();
